@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Pomodoro Interval Timer</title>
+  <meta name="description" content="">
+  <meta name="author" content="Kieran Harding">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Javascript
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="client.js" charset="utf-8"></script>
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="six columns">
+        <h1>Pomodoro Timer!</h1>
+        <p>Some text explaining what to do here.</p>
+      </div>
+      <div class="six columns">
+        <div id="settings" style="margin-top: 25%">
+          <!-- TODO: Allow entry of minutes and seconds so this can be a
+            workout interval timer.
+          <input type="time" step='1' min="00:00:01" max="00:60:00" value="00:25:00" name="work-duration">
+          <input type="time" step='1' min="00:00:01" max="00:10:00" value="00:05:00"  name="rest-duration">
+        -->
+          <div class="row">
+            <div class="six columns">
+              <label for="work-duration">How long to work</label>
+              <input type="number" name="work-duration" id="work" min="1" max="59" value="25">
+            </div>
+            <div class="six columns">
+              <label for="rest-duration">How long to rest</label>
+              <input type="number" name="rest-duration" id="rest" min="1" max="59" value="5">
+            </div>
+          </div>
+        </div>
+        <div id="clock">
+          25:00
+        </div>
+        <div class="row" id="buttons">
+          <button id="start-stop">Start</button>
+          <button id="reset">Reset</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
