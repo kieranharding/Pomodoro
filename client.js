@@ -60,7 +60,6 @@ var StateFresh = Object.create(State, { //Using the properties object is a mista
       this.target.display.innerText = this.target.work.value + ':00'
       this.target.button.innerText = "Start"
       document.body.style.backgroundColor = '#fff'
-      //  Set background color to the Rest color
     },
     enumerable: false,
     writable: false,
@@ -70,7 +69,6 @@ var StateFresh = Object.create(State, { //Using the properties object is a mista
     value: function() {},
     enumerable: false
   }
-  //    resting - timer is counting the rest interval
   //    stopped - user has paused the clock. Skip this. Pomodoro or don't.
 })
 
@@ -105,9 +103,10 @@ var StateWorking = Object.create(State, {
           _this.target.changeState(StateResting)
         } else {
           _this.displayRemainingTime()
-        //  TODO: Change the background color with clock progress
-          var color = 'hsl(' + _this.getColor() + ',100%,50%)'
-          console.log(color)
+          // Change the background color with clock progress
+          var color = 'hsl(' + _this.getColor() + ',75%,50%)'
+          //  TODO: Apply a lighter version of the color gradient to button
+          //  and input fields.
           document.body.style.backgroundColor = color
         }
       }, 100)
@@ -158,9 +157,8 @@ var StateResting = Object.create(State, {
           _this.target.changeState(StateWorking)
         } else {
           _this.displayRemainingTime()
-          //  TODO: Change the background color with clock progress
-          var color = 'hsl(' + (120 -_this.getColor()) + ',100%,50%)'
-          console.log(color)
+          // Change the background color with clock progress
+          var color = 'hsl(' + (120 -_this.getColor()) + ',75%,50%)'
           document.body.style.backgroundColor = color
         }
       }, 100)
