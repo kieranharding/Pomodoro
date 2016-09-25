@@ -36,7 +36,13 @@
     <div class="row">
       <div class="six columns">
         <h1>Pomodoro Timer!</h1>
-        <p>Some text explaining what to do here.</p>
+        <p>This is a Pomodoro Timer, for practicing the Pomodoro method.
+        Set your work and rest intervals to whatever you want, but the
+        defaults are recommended. There is no Pause option, because you take
+        your breaks during the rest period. If you are brutally interrupted,
+        start a new work interval.</p>
+
+        <p>Go break some eggs!</p>
       </div>
       <div class="six columns">
         <div id="settings" style="margin-top: 25%">
@@ -46,25 +52,28 @@
           <input type="time" step='1' min="00:00:01" max="00:10:00" value="00:05:00"  name="rest-duration">
         -->
           <div class="row">
-            <div class="six columns">
+            <div class="six columns field">
               <label for="work-duration">How long to work</label>
               <input type="number" name="work-duration" id="work" min="1" max="59" value="25">
             </div>
-            <div class="six columns">
+            <div class="six columns field">
               <label for="rest-duration">How long to rest</label>
               <input type="number" name="rest-duration" id="rest" min="1" max="59" value="5">
             </div>
           </div>
         </div>
-        <div id="status"></div>
-        <div id="clock">
+        <div class="row">
+          <div id="status"></div>
         </div>
-        <div class="row" id="buttons">
-          <button id="start-stop"></button>
-          <!-- <button id="reset">Reset</button> -->
+        <div class="row">
+          <div class="six columns">
+            <h2 id="clock"></h2>
+          </div>
+          <div class="six columns">
+            <button id="start-stop"></button>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 

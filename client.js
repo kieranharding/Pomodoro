@@ -33,6 +33,12 @@ var State = {
   getInterval: function() {
     //  Return the total work or rest time in milliseconds.
     return this.target.interval
+  },
+  getColor: function() {
+    //  Return the H portion of HSL
+    var color = 120 * (this.getRemainingTime() / this.target.interval)
+    // console.log(color)
+    return color
   }
 }
 
@@ -53,6 +59,7 @@ var StateFresh = Object.create(State, { //Using the properties object is a mista
       this.target.endTime = null  //  Make sure no Remaining Time methods fire
       this.target.display.innerText = this.target.work.value + ':00'
       this.target.button.innerText = "Start"
+      document.body.style.backgroundColor = '#fff'
       //  Set background color to the Rest color
     },
     enumerable: false,
@@ -98,6 +105,10 @@ var StateWorking = Object.create(State, {
           _this.target.changeState(StateResting)
         } else {
           _this.displayRemainingTime()
+        //  TODO: Change the background color with clock progress
+          var color = 'hsl(' + _this.getColor() + ',100%,50%)'
+          console.log(color)
+          document.body.style.backgroundColor = color
         }
       }, 100)
 
@@ -105,7 +116,6 @@ var StateWorking = Object.create(State, {
       this.target.status.innerText = 'You Should Be Working!'
       this.target.button.innerText = "Reset"
 
-      //  TODO: Change the background color with clock progress
     },
     enumerable: false,
     writable: false,
@@ -148,6 +158,10 @@ var StateResting = Object.create(State, {
           _this.target.changeState(StateWorking)
         } else {
           _this.displayRemainingTime()
+          //  TODO: Change the background color with clock progress
+          var color = 'hsl(' + (120 -_this.getColor()) + ',100%,50%)'
+          console.log(color)
+          document.body.style.backgroundColor = color
         }
       }, 100)
 
@@ -155,7 +169,6 @@ var StateResting = Object.create(State, {
       this.target.status.innerText = 'You Should Be Resting!'
       this.target.button.innerText = "Reset"
 
-      //  TODO: Change the background color with clock progress
     },
     enumerable: false,
     writable: false,

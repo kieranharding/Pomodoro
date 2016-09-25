@@ -1,4 +1,19 @@
+body {
+  /*background-color: hsl(0, 100%, 50%)*/
+}
+
+#status {
+  text-align: center;
+}
+
 #clock {
   width: 50%;
   margin: 0 auto;
+  display: inline;
+  text-align: center;
+}
+
+#start-stop {
+  margin: 1rem 0 0 2rem;
+  background-color: #fff;
 }
